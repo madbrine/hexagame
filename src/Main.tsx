@@ -1,9 +1,10 @@
 import Hex from "./components/Hex";
+import HexagonsScreen from "./screens/HexagonsScreen";
 
 function Main() {
   return (
-    <div>
-      <Hex border={6} size={50} borderColor={"gray"} hexColor={"white"}/>
+    <div style={{padding: 12}}>
+      <HexagonsScreen width={32} height={19}/>
     </div>
   );
 }
