@@ -2,20 +2,30 @@ import styled from "@emotion/styled";
 import { useState } from "react";
 
 interface IProps {
-    border: number;
-    size: number;
-    borderColor: string;
-    hexColor: string;
+    border: number,
+    size: number,
+    borderColor: string,
+    hexColor: string,
+    standartPosition: number,
+    hexEdge: number,
+    boxWidth: number,
+    boxHeight: number,
+    x: number,
+    y: number,
 }
 
-function Hex({border, size, borderColor, hexColor}: IProps) {
-
-    const isHexColor = hexColor;
-
-    const standartPosition = size/2 + border/2;
-    const hexEdge = size * 0.58;
-    const boxWidth = size + border;
-    const boxHeight = hexEdge + hexEdge/2 + border;
+function Hex({
+    border,
+    size,
+    borderColor,
+    hexColor,
+    standartPosition,
+    hexEdge,
+    boxWidth,
+    boxHeight,
+    x,
+    y
+}: IProps) {
 
     const This = styled.div`
         margin-left: ${standartPosition}px;
@@ -26,14 +36,14 @@ function Hex({border, size, borderColor, hexColor}: IProps) {
         transform: translate(-50%, -50%);
         border-left: solid ${border}px ${borderColor};
         border-right: solid ${border}px ${borderColor};
-        background-color: ${isHexColor};
+        background-color: ${hexColor};
         &:before,
         &:after {
             content: '';
             width: 100%;
             height: 100%;
             position: absolute;
-            background-color: ${isHexColor};
+            background-color: ${hexColor};
         }
         &:before {
             transform: rotate(60deg);
@@ -51,12 +61,19 @@ function Hex({border, size, borderColor, hexColor}: IProps) {
     const Box = styled.div`
         width: ${boxWidth}px;
         height: ${boxHeight}px;
+        color: red;
         &:hover {
             opacity: 0.8
         }
     `
     return (
         <Box>
+        <div style={{zIndex: 1, position: 'absolute', marginTop: size/3}}>
+        x:{x}
+        </div>
+        <div style={{zIndex: 1, position: 'absolute', marginTop: size/1.5}}>
+        y:{y}
+        </div>
             <This>
             </This>
         </Box>

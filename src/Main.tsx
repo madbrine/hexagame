@@ -1,10 +1,11 @@
 import Hex from "./components/Hex";
+import useWindowDimensions from "./hooks/useWindowDimensions";
 import HexagonsScreen from "./screens/HexagonsScreen";
 
 function Main() {
   return (
-    <div style={{padding: 12}}>
-      <HexagonsScreen width={20} height={15}/>
+    <div style={{position: 'absolute', padding: 12}}>
+      <HexagonsScreen hexSize={50} hexBorder={5}/>
     </div>
   );
 }
