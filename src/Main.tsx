@@ -4,7 +4,7 @@ import HexagonsScreen from "./screens/HexagonsScreen";
 function Main() {
   return (
     <div style={{padding: 12}}>
-      <HexagonsScreen width={32} height={19}/>
+      <HexagonsScreen width={20} height={15}/>
     </div>
   );
 }

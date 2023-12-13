@@ -10,7 +10,7 @@ function HexagonsScreen({ width, height }: IProps) {
     const arrHeight = Array.from({ length: height }, (_, i) => i);
 
     const hexSize = 50;
-    const hexBorder = 2;
+    const hexBorder = 6;
 
     console.log(arrWidth);
     console.log(arrHeight)

@@ -10,7 +10,7 @@ interface IProps {
 
 function Hex({border, size, borderColor, hexColor}: IProps) {
 
-    const [isHexColor, setHexColor] = useState(hexColor);
+    const isHexColor = hexColor;
 
     const standartPosition = size/2 + border/2;
     const hexEdge = size * 0.58;
@@ -56,7 +56,7 @@ function Hex({border, size, borderColor, hexColor}: IProps) {
         }
     `
     return (
-        <Box >
+        <Box>
             <This>
             </This>
         </Box>
