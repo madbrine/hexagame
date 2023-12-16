@@ -1,4 +1,4 @@
-import { Shape } from "react-konva";
+import { Shape, Text } from "react-konva";
 
 interface IProps {
     border: number,
@@ -63,7 +63,8 @@ function HexShape({
             fill="#00D2FF"
             stroke="gray"
             strokeWidth={border}
-        />
+        >
+        </Shape>
     );
 }
 
