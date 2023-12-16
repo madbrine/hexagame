@@ -18,7 +18,11 @@ function HexShape({
     xPosition,
     yPosition,
 }: IProps) {
-    const xp = xPosition * size;
+    const xp = yPosition % 2 === 0
+        ?
+        (xPosition * size) + (0.5 * size)
+        :
+        xPosition * size;
     const yp = size * 0.75 * yPosition;
     return (
         <Shape
@@ -58,8 +62,9 @@ function HexShape({
             }}
             fill="#00D2FF"
             stroke="gray"
-            strokeWidth={4}
-        />);
+            strokeWidth={border}
+        />
+    );
 }
 
 export default HexShape;

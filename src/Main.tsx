@@ -5,9 +5,9 @@ import SceneRenderer from "./screens/SceneRenderer";
 
 function Main() {
   return (
-    <div style={{position: 'absolute'}}>
-      {/* <HexagonsScreen hexSize={50} hexBorder={5}/> */}
-      <SceneRenderer hexSize={50} hexBorder={5}/>
+    <div>
+      {/* <HexagonsScreen hexSize={10} hexBorder={5}/> */}
+      <SceneRenderer hexSize={20} hexBorder={1}/>
     </div>
   );
 }
