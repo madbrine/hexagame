@@ -60,8 +60,9 @@ function HexShape({
                 // (!) Konva specific method, it is very important
                 context.fillStrokeShape(shape);
             }}
-            fill="#00D2FF"
-            stroke="gray"
+            fill={`#f${(''+xPosition)[0]}a${(''+yPosition)[0]}1b`}
+    
+            stroke={`#f${(''+xPosition)[0]}${(''+yPosition)[0]}a`}
             strokeWidth={border}
         >
         </Shape>
