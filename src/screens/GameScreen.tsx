@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import SceneRenderer from "../modules/GraphicView/scenes/SceneRenderer";
+import SceneRenderer from "../scenes/SceneRenderer";
 import useWindowDimensions from "../hooks/useWindowDimensions";
+import { world } from "../api/worldData";
 
 function GameScreen() {
 
     const { windowWidth, windowHeight } = useWindowDimensions();
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
-    const hexWidth = 11;
+    const hexWidth = 70;
     const hexHeight = hexWidth * 0.75
 
     const arrWidth = Array.from({ length: width }, (_, i) => i);
@@ -35,9 +36,8 @@ function GameScreen() {
         <div onClick={(e)=>{whatsHex(e)}}>
             <SceneRenderer 
                 hexWidth={hexWidth} 
-                hexBorder={1}
-                arrWidth={arrWidth}
-                arrHeight={arrHeight}
+                hexBorder={5}
+                worldData={world}
             />
         </div>
     );

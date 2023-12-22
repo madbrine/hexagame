@@ -1,5 +1,5 @@
 
-import SceneRenderer from "./modules/GraphicView/scenes/SceneRenderer";
+import SceneRenderer from "./scenes/SceneRenderer";
 import GameScreen from "./screens/GameScreen";
 
 function Main() {

@@ -1,23 +1,32 @@
-import { Shape, Text } from "react-konva";
+import { Group, Shape, Text } from "react-konva";
+import { IHex } from "../types/IHex";
 
 interface IProps {
     border: number,
     size: number,
-    borderColor: string,
-    hexColor: string,
-    hexEdge: number,
+    hex: IHex,
     xPosition: number,
     yPosition: number,
 }
 function HexShape({
     border,
     size,
-    borderColor,
-    hexColor,
-    hexEdge,
+    hex,
     xPosition,
     yPosition,
 }: IProps) {
+
+    const hexColor =
+        hex.hex === 0 ? '#FFFFFF'
+            :
+            hex.hex === 1 ? '#0e387cf'
+                :
+                hex.hex === 2 ? '#2165d1f'
+                    :
+                    hex.hex === 3 ? '#488941f'
+                        :
+                        '#383838'
+
     const xp = yPosition % 2 === 0
         ?
         (xPosition * size) + (0.5 * size)
@@ -36,18 +45,22 @@ function HexShape({
                     xp + 0.5 * size,
                     yp
                 );
+                //00
                 context.lineTo(
                     xp + size,
                     yp + 0.25 * size
                 );
+                //11
                 context.lineTo(
                     xp + size,
                     yp + 0.75 * size
                 );
+                //22
                 context.lineTo(
                     xp + 0.5 * size,
                     yp + size
                 );
+                //33
                 context.lineTo(
                     xp,
                     yp + 0.75 * size
@@ -60,12 +73,9 @@ function HexShape({
                 // (!) Konva specific method, it is very important
                 context.fillStrokeShape(shape);
             }}
-            fill={`#f${(''+xPosition)[0]}a${(''+yPosition)[0]}1b`}
-    
-            stroke={`#f${(''+xPosition)[0]}${(''+yPosition)[0]}a`}
+            fill={hexColor && hexColor}
             strokeWidth={border}
-        >
-        </Shape>
+        />
     );
 }
 

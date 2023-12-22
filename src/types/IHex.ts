@@ -1,8 +1,9 @@
 export interface IHex {
-    color: string,
-    edges: {
-        color1: string,
-        color2: string,
-        color3: string,
-    }
+    hex: number,
+    people: number,
+    product: number,
+    unit: number,
+    building: number,
+    resource: number,
+    edges: [number, number, number]
 }
